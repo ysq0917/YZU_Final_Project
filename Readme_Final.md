@@ -39,9 +39,31 @@
   python tools/train.net.py --num-qpus 4 -config-file <change to the appropriate config file> SOLVER.IMS_PER_BATCH 4 SOVER.BASE_LR 0.005
   
   ```
-13. 模型訓練結束後，到自己的路徑下查看相應的模型 (model_final.pth)與測試結果(log.txt)
+13. 模型訓練結束後，到自己的路徑下查看相應的模型 (model_final.pth)與測試結果(log.txt）
 14. 使用類似方式進行下一階段訓練，開啟/configs/OWOD/t2/"路徑下的 t2_train.yaml
 ![image6](https://github.com/ysq0917/YZU_Final_Project/blob/main/image6.png)
+
+15. 使用相同指令進行訓練，需注意改變文件位置
+  ```
+  python tools/train.net.py --num-qpus 4 -config-file <change to the appropriate config file> SOLVER.IMS_PER_BATCH 4 SOVER.BASE_LR 0.005
+  
+  ```
+16. 模型訓練結束後，同樣到自己的輸出路徑下查看相應的模型 (model_final.pth)與測試結果(log.txt)
+17. 使用類似方式進行 fine-tune 階段的訓練，開啟configs/OWOD/t2/"路徑下的 t2_ft.yaml
+![image7](https://github.com/ysq0917/YZU_Final_Project/blob/main/image7.png)
+將 WEIGHTS 改為上一階段訓練的最終模型路徑，同樣根據自身資料數量設定 STEPS 與 MAX_ITER，根據自身需要調整文件夾位置與不同階段訓練的數量，不同的是 fine-tune 階段需要調整 TRAIN 與 TEST 的對應資料夾。
+
+
+18. 模型訓練結束後，同樣到自己的輸出路徑下查看最終階段的模型 (model_final.pth)與測試結果(log.txt)，一個輪次的訓練結束。若要進行多輪次訓練，可 將 fine-tune 後的模型再次放入第二階段進行訓練。
+
+
+
+
+  
+  
+  
+  
+
  
  
 
