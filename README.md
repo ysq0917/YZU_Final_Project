@@ -1,6 +1,6 @@
 ## 實作流程
 
-1.下載OWOD-master文件夾
+1. 下載OWOD-master文件夾
 2. 在 OWOD 內部建立 Detectron2: 
    ```
    python -m pip install 'git+https://github.com/facebookresearch/detectron2.git
